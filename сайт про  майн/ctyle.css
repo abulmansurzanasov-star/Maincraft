@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Задний фон: пиксельный блок травы */
+    background-image: url('https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTqgoqDgmaBgkskw3H-IkT5uayJwJfuW_9AkjdzVdA-wrsKuLcrAdjhlI2L07GzUa3YGZMHqupNSrvXvK8');
+    background-repeat: repeat;
+    background-size: 120px;
+    font-family: 'Press Start 2P', sans-serif;
+    min-height: 100vh;
+
+    /* Flexbox для центрирования контента на экране */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+main {
+    /* Белый фон главного блока */
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    border: 6px solid #000000;
+    box-shadow: 0 12px 0px rgba(0, 0, 0, 0.4);
+
+    /* Flexbox для вертикального построения элементов */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* НАВИГАЦИЯ НАВЕРХУ С ХОВЕРОМ */
+nav {
+    display: flex;
+    gap: 15px;
+    border-bottom: 4px dashed #4a4a4a;
+    padding-bottom: 25px;
+}
+
+.nav-btn {
+    flex: 1;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 11px;
+    padding: 15px;
+    border: 4px solid #000000;
+    cursor: pointer;
+
+    /* Изначально кнопки ТЕМНО-СЕРЫЕ */
+    background-color: #4a4a4a;
+    color: #ffffff;
+    transition: background-color 0.15s ease;
+}
+
+/* ЭФФЕКТ ХОВЕРА: Наверху при наведении становится ЯРКО-СЕРЫМ */
+.nav-btn:hover {
+    background-color: #b0b0b0;
+    color: #000000;
+}
+
+/* Активная вкладка, чтобы понимать, где мы находимся */
+.nav-btn.active {
+    background-color: #5c8e32;
+    /* Зеленый цвет травы для активной страницы */
+    color: white;
+}
+
+.nav-btn.active:hover {
+    background-color: #5c8e32;
+    color: white;
+}
+
+/* СТИЛИ ДЛЯ КОНТЕНТА */
+.page {
+    display: none;
+    /* По умолчанию скрываем страницы */
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Класс для показа активной страницы через Flexbox */
+.page.show {
+    display: flex;
+}
+
+h1 {
+    color: #111111;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #222222;
+    font-size: 14px;
+    border-left: 6px solid #4a4a4a;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+p {
+    color: #444444;
+    font-size: 11px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Список серверов на Flexbox */
+.server-card {
+    background: #f0f0f0;
+    border: 4px solid #000000;
+    padding: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.server-name {
+    color: #5c8e32;
+    font-size: 13px;
+}

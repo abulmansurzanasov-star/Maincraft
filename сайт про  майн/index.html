@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./ctyle.css">
+</head>
+
+<body>
+
+    <main>
+        <!-- ВЕРХНЕЕ МЕНЮ (Кнопки темно-серые, ховер ярко-серый) -->
+        <nav>
+            <button class="nav-btn active" onclick="openPage('history', this)">Главная</button>
+            <button class="nav-btn" onclick="openPage('servers', this)">Популярные сервера</button>
+            <button class="nav-btn" onclick="openPage('youtubers', this)">Ютуберы по игре</button>
+        </nav>
+
+        <!-- СТРАНИЦА 1: ИСТОРИЯ МАЙНКРАФТА -->
+        <div id="history" class="page show">
+            <h1>История создания Minecraft</h1>
+
+            <h2>Как все начиналось (2009)</h2>
+            <p>История легендарной песочницы началась в мае 2009 года. Шведский программист Маркус Перссон (Notch) всего
+                за одну неделю написал первую рабочую альфа-версию, которая тогда называлась "Cave Game".</p>
+
+            <h2>Развитие и релиз (2011)</h2>
+            <p>Из простой песочницы Minecraft превратился в симулятор выживания с опасными монстрами, системами крафта
+                ресурсов и параллельными измерениями. Официальный релиз состоялся 18 ноября 2011 года.</p>
+
+            <h2>Эпоха Microsoft (2014 - н.в.)</h2>
+            <p>В 2014 году компания Microsoft выкупила Minecraft за 2,5 миллиарда долларов. Сегодня это самая
+                продаваемая игра в истории: продано более 300 миллионов копий по всему миру.</p>
+        </div>
+
+        <!-- СТРАНИЦА 2: ПРО СЕРВЕРА -->
+        <div id="servers" class="page">
+            <h1>Популярные сервера Minecraft</h1>
+
+            <div class="item-card">
+                <div class="item-title">1. Hypixel</div>
+                <p>Самый большой и известный сервер в мире. Он знаменит своими уникальными мини-играми, такими как
+                    BedWars, SkyWars и огромной RPG-вселенной SkyBlock, где одновременно играют десятки тысяч людей.</p>
+            </div>
+
+            <div class="item-card">
+                <div class="item-title">2. 2b2t</div>
+                <p>Старейший анархический сервер в игре. Здесь нет никаких правил, приватных территорий и запретов на
+                    читы. Мир сервера не вайпался с 2010 года, превратившись в настоящие цифровые руины.</p>
+            </div>
+
+            <div class="item-card">
+                <div class="item-title">3. Wynncraft</div>
+                <p>Это не просто сервер, а полноценная MMORPG внутри Майнкрафта. Огромная проработанная карта, квесты,
+                    прокачка персонажей, магия, гильдии и подземелья без использования сторонних модов.</p>
+            </div>
+        </div>
+
+        <!-- СТРАНИЦА 3: ПРО ЮТУБЕРОВ -->
+        <div id="youtubers" class="page">
+            <h1>Легендарные Майнкрафт Ютуберы</h1>
+
+            <div class="item-card">
+                <div class="item-title">MrLololoshka (Роман Фильченков)</div>
+                <p>Один из самых популярных и преданных русскоязычных ютуберов по Minecraft. Снискал огромную любовь
+                    аудитории благодаря своим масштабным сюжетным прохождениям комплексных сборок модов с глубоким лором
+                    и проработкой персонажей.</p>
+            </div>
+
+            <div class="item-card">
+                <div class="item-title">Компот (Роман Парамонов)</div>
+                <p>Популярнейший блогер, известный своими увлекательными историями, сериалами и летсплеями из «жители
+                    деревни №13». Его ролики собирают миллионы просмотров благодаря понятному, забавному и доброму
+                    контенту.</p>
+            </div>
+
+            <div class="item-card">
+                <div class="item-title">Dream</div>
+                <p>Зарубежный ютубер, совершивший настоящий переворот в сообществе. Он стал невероятно популярен
+                    благодаря рубрике «Minecraft Speedrunner VS Hunter» (Спидраннер против Охотников), подняв интерес к
+                    профессиональному прохождению игры на новый уровень.</p>
+            </div>
+
+            <div class="item-card">
+                <div class="item-title">Technoblade</div>
+                <p>Легенда YouTube и один из лучших ПВП-игроков в истории Minecraft. Был известен своим фирменным
+                    юмором, тактическим мышлением и фразой «Technoblade never dies!». Оставил колоссальный след в
+                    истории игры и сервера DreamSMP.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Скрипт для мгновенного переключения страниц без перезагрузки -->
+    <script>
+        function openPage(pageId, button) {
+            // Скрываем все страницы
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('show'));
+
+            // Убираем активный статус у всех кнопок
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Показываем нужную страницу и делаем кнопку активной
+            document.getElementById(pageId).classList.add('show');
+            button.classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>
